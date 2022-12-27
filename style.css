@@ -1,5 +1,54 @@
 html,
 body {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(30, 30, 30);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+div#container {
+    color: white;
+    border: 2px solid green;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 20px;
+    height: 180px;
+    width: 300px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+img {
+    height: 80px;
+}
+
+#img {
+    left: 50%;
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 50%;
+
+}
+
+a:hover {
+    color: green;
+    transition: 0.5s;
+}
+
+h2 {
+    text-align: center;
+}
+
+div#projects {
+    padding-left: 10px;
 }
