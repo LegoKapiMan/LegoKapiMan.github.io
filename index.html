@@ -3,26 +3,186 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lego Kapi Man</title>
-    <link rel="shortcut icon" type="image" href="img/mustang.jpg">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image" href="img/mustang.jpg">
+    <title>LegoKapiMan</title>
+    <script src="script.js" defer></script>
+    <meta name="theme-color" content="#00d11c" />
+    <meta property="og:title" content="LegoKapiMan" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://legokapiman.github.io/" />
+    <meta property="og:image" content="https://legokapiman.github.io/img/mustang.png" />
+    <meta property="og:description" content="Oficjalna strona LegoKapiMana" />
 </head>
 
 <body>
-    <div>
-        <div id="container">
-            <div id="img"><img src="img/mustang.jpg" alt="mustang"></div>
-            <h2>Lego Kapi Man</h2>
-            <div id="projects">
-                Moje projekty:
-                <ul>
-                    <li><a target="_blank" href="https://legokapiman.github.io/polonez/">Polonez</a><br></li>
-                    <li><a target="_blank" href="https://legokapiman.github.io/kolo/">Koło</a><br></li>
-                    <li><a target="_blank" href="https://legokapiman.github.io/kryptowaluty/">Kryptowaluty</a><br></li>
-                </ul>
+    <div id="projects" draggable="false">
+        <a href="https://thefinalparsec.github.io" target="_blank" onclick="if(event.detail !== 2) return false;">
+            <div class="project">
+                <img src="img/The_Final_Parsec.png" alt="parsec"><br>
+                The Final Parsec
             </div>
+        </a>
+        <a href="https://newhero-project.web.app/" target="_blank" onclick="if(event.detail !== 2) return false;">
+            <div class="project">
+                <img src="img/logo.png" alt="parsec"><br>
+                new Hero();
+            </div>
+        </a>
+        <a href="https://legokapiman.github.io/kolo/" target="_blank" onclick="if(event.detail !== 2) return false;">
+            <div class="project">
+                <img src="img/kolo1.png" alt="koło"><br>
+                Koło
+            </div>
+        </a>
+        <!-- <a href="https://legokapiman.github.io/kolo/" target="_blank"
+            onclick="if(event.detail !== 2) return false;">
+            <div class="project">
+                <img src="img/kolo.png" alt="koło"><br>
+                Koło
+            </div>
+        </a> -->
+        <a href="https://legokapiman.github.io/polonez/" target="_blank" onclick="if(event.detail !== 2) return false;">
+            <div class="project">
+                <img src="img/polonez.png" alt="polonez"><br>
+                Polonez
+            </div>
+        </a>
+        <a href="https://legokapiman.github.io/kryptowaluty/" target="_blank"
+            onclick="if(event.detail !== 2) return false;">
+            <div class="project">
+                <img src="img/bitcoinlogo.png" alt="kryptowaluty"><br>
+                Krypto
+            </div>
+        </a>
+    </div>
+    <div id="press"></div>
+    <!-- <div id="projects">
+        <a href="https://legokapiman.github.io/kolo/" target="_blank" onclick="if(event.detail !== 2) return false;"
+            onkeydown="if(event.key === 'Enter') window.open(this.href, '_blank');">
+            <div class="project">
+                <img src="img/kolo.png" alt="koło"><br>
+                Koło
+            </div>
+        </a>
+        <a href="https://legokapiman.github.io/kolo/" target="_blank"
+            onclick="if(!event.detail || event.detail == 1) return false;">
+            <div class="project">
+                <img src="img/kolo.png" alt="koło"><br>
+                Koło
+            </div>
+        </a>
+        <a href="https://legokapiman.github.io/polonez/" target="_blank" onclick="if(event.detail !== 2) return false;"
+            onkeydown="if(event.key === 'Enter') window.open(this.href, '_blank');">
+            <div class="project">
+                <img src="img/polonez.png" alt="polonez"><br>
+                Polonez
+            </div>
+        </a>
+        <a href="https://legokapiman.github.io/kryptowaluty/" target="_blank"
+            onclick="if(event.detail !== 2) return false;"
+            onkeydown="if(event.key === 'Enter') window.open(this.href, '_blank');">
+            <div class="project">
+                <img src="img/bitcoinlogo.png" alt="kryptowaluty"><br>
+                Krypto
+            </div>
+        </a>
+    </div> -->
+    <div id="popups">
+        <div id="windowscontainer">
+            <div class="images" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div class="imgcontainer">
+                    <img src="img/wallpaper.jpg" alt="defaultwallicon">
+                </div>
+                <div class="imgcontainer">
+                    <img src="img/wallpaper1.jpg" alt="defaultwallicon">
+                </div>
+                <div class="imgcontainer">
+                    <img src="img/wallpaper2.jpg" alt="defaultwallicon">
+                </div>
+                <div class="imgcontainer">
+                    <img src="img/wallpaper3.jpg" alt="defaultwallicon">
+                </div>
+                <div class="imgcontainer">
+                    <img src="img/wallpaper4.jpg" alt="defaultwallicon">
+                </div>
+                <div class="imgcontainer">
+                    <img src="img/wallpaper5.jpg" alt="defaultwallicon">
+                </div>
+                <div class="imgcontainer">
+                    <img src="img/wallpaper6.jpg" alt="defaultwallicon">
+                </div>
+                <div class="imgcontainer">
+                    <img src="img/wallpaper7.jpg" alt="defaultwallicon">
+                </div>
+                <!-- <img src="img/wallpaper.jpg" alt="defaultwallicon">
+                    <img src="img/wallpaper1.jpg" alt="defaultwallicon">
+                    <img src="img/wallpaper2.jpg" alt="defaultwallicon">
+                <img src="img/wallpaper4.jpg" alt="defaultwallicon">
+                <img src="img/wallpaper6.jpg" alt="defaultwallicon">
+                <img src="img/wallpaper7.jpg" alt="defaultwallicon">
+                <img src="img/wallpaper5.jpg" alt="defaultwallicon">
+                <img src="img/wallpaper3.jpg" alt="defaultwallicon"> -->
+            </div>
+            <label class="custom-file-upload">
+                <input type="file" multiple>
+                Select or drag an image
+            </label>
+        </div>
+        <div id="language">
+            <label id="languagecontainer">
+                <input type="radio" checked="true">
+                <span id="checkmark"></span>
+                <div>English</div>
+            </label>
+        </div>
+        <div id="timechange">
+            <label id="timecontainer">
+                <input type="checkbox">
+                <span id="checkmark"></span>
+                <div>Show seconds</div>
+            </label>
+        </div>
+        <div id="changelog">
+            <h1>Change log</h1>
+            <p>1.0 (XX.11.2023)</p>
+            - site release
+            <div id="changelogFooter">
+                <a href="https://github.com/LegoKapiMan" target="_blank">@LegoKapiMan</a>
+            </div>
+        </div>
+    </div>
+    <!-- <div id="press"></div> -->
+    <footer>
+        <img src="img/windows.png" alt="windows" tabindex="1" id="windowsicon">
+        <img src="img/lupa.png" alt="lupa" tabindex="1" id="lupaicon" class="unavailable">
+        <img src="img/explorer.png" alt="explorer" class="unavailable">
+        <img src="img/notepad.png" alt="notepad" class="unavailable" id="notepad">
+        <img src="img/chrome.png" alt="chrome" class="unavailable" id="chrome">
+        <img src="img/arrow.png" alt="arrow" id="arrow" tabindex="5">
+        <img src="img/ethernet.png" alt="ethernet" id="ethernet" tabindex="6">
+        <div id="time" tabindex="7"></div>
+        <img src="img/notification.png" alt="notification" id="notification" tabindex="8">
+        <div id="desktop" tabindex="9"></div>
+    </footer>
+    <div id="bluescreen">
+        <div id="before">
+            <h1>:(</h1>
+            <p>
+                Your PC ran into a problem and needs to restart. We're<br>
+                just collecting some error info, and then we'll restart for<br>
+                you.
+            </p>
+            <h2>0% complete</h2>
+            <img src="img/qrcode.png" alt="qrcode" id="qrcode">
+            <span>For more information about this issue and possible fixes, visit fdjskaflsj</span>
+            <span>If you call a support person, give them this info:</span>
+            <span>Stop code: YOU_CLICKED_ALT_W</span>
+        </div>
+        <div id="after">
+            <img src="img/windowsloading.gif" alt="loading" id="loading">
+            <h3>Restarting</h3>
         </div>
     </div>
 </body>

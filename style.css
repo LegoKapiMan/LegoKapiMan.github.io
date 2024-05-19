@@ -1,53 +1,537 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI';
+    font-weight: lighter;
+    user-select: none;
+}
+
 html,
 body {
+    width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+}
+
+body {
+    background-image: url(img/wallpaper.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    background-position: center;
+    flex-wrap: wrap;
+    transition: background-image 0.25s;
+    overflow: hidden;
+}
+
+img,
+a {
+    -webkit-user-drag: none;
+}
+
+/* .project {
+    color: white;
+    cursor: default;
+} */
+
+#projects {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: flex-start;
+}
+
+#projects a {
+    text-decoration: none;
+    margin: 10px;
+    margin-bottom: 0;
+    color: white;
+    text-align: center;
+    height: 80px;
+    width: 110px;
+    padding: 5px 0;
+    user-select: none;
+    border: 1px solid rgba(255, 255, 255, 0);
+    cursor: default;
+    z-index: 1;
+    text-shadow: 1px 1px 2px #000000;
+    font-size: 15px;
+}
+
+.project img {
+    height: 45px;
+}
+
+#press {
     height: 100%;
     width: 100%;
-    background-color: rgb(30, 30, 30);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-div#container {
-    color: white;
-    border: 2px solid green;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    z-index: 0;
     position: absolute;
-    border-radius: 20px;
-    height: 180px;
-    width: 300px;
 }
 
-img {
-    height: 80px;
+footer .unavailable:active {
+    background-color: rgba(255, 0, 0, 0.5) !important;
 }
 
-#img {
-    left: 50%;
-    margin-top: 70px;
+footer img:active,
+footer div:active {
+    background-color: rgba(255, 255, 255, 0.25) !important;
+    transition: 0s;
+}
+
+#projects a:hover {
+    /* background-color: rgba(127, 202, 235, 0.4);
+    border: 1px solid rgba(127, 202, 235, 0.6); */
+    background-color: rgba(111, 178, 207, 0.4);
+    border: 1px solid rgba(127, 202, 235, 0.6);
+}
+
+.highlight {
+    background-color: rgba(127, 202, 235, 0.4);
+    border: 1px solid rgba(127, 202, 235, 0.6) !important;
+}
+
+footer {
+    height: 50px;
+    background-color: rgba(29, 48, 56, 0.9);
     display: flex;
-    justify-content: center;
+    backdrop-filter: blur(8px);
     position: absolute;
-    width: 50%;
+    bottom: 0;
+    width: 100%;
 }
 
-h2 {
+footer>img {
+    padding: 10px;
+    transition: 0.2s;
+    user-select: none;
+}
+
+#windowscontainer {
+    user-select: none;
+    position: absolute;
+    height: 300px;
+    width: 432px;
+    background-color: rgba(29, 48, 56, 0.9);
+    backdrop-filter: blur(8px);
+    bottom: 50px;
+    color: white;
+    overflow: hidden;
+    border-radius: 0 2px 0 0;
+    transition: 0.3s;
+    opacity: 0;
+    padding-left: 12px;
+    padding-top: 12px;
+    display: flex;
+    z-index: -1;
+}
+
+.custom-file-upload {
+    border: 1px solid rgb(255, 255, 255);
+    padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+}
+
+.custom-file-upload:hover {
+    background-color: rgb(255, 255, 255, 0.15);
+}
+
+#windowscontainer .images {
+    flex-wrap: wrap;
+    display: flex;
+    align-content: flex-start;
+}
+
+#windowscontainer img {
+    border: 1px solid rgb(100, 100, 100);
+    height: 72px;
+    width: 128px;
+    margin-right: 12px;
+    margin-bottom: 12px;
+    float: left;
+    overflow: hidden;
+}
+
+.imgcontainer {
+    height: 72px;
+    width: 128px;
+    margin-right: 12px;
+    margin-bottom: 12px;
+}
+
+.imgcontainer:hover:before {
+    content: "";
+    display: flex;
+    position: absolute;
+    height: 70px;
+    width: 126px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 1px;
+    pointer-events: none;
+}
+
+.delete {
+    position: absolute;
+    margin-left: 97px;
+    margin-top: 1px;
+    width: 30px;
+    height: 30px;
+    /* display: flex; */
+    border-radius: 0 0 0 2px;
+}
+
+.delete:before,
+.delete:after {
+    top: 30%;
+    right: 30%;
+    bottom: 30%;
+    left: 30%;
+    content: " ";
+    position: absolute;
+    border-color: #CCCCCC;
+    border-style: solid;
+    border-width: 0 0 2px 0;
+}
+
+.delete:before,
+.delete:after {
+    bottom: 50%;
+    top: 50%;
+}
+
+.delete:before {
+    transform: rotate(45deg);
+}
+
+.delete:after {
+    transform: rotate(-45deg);
+}
+
+.delete:hover {
+    background-color: #E04343;
+}
+
+.delete:hover:after,
+.delete:hover:before {
+    border-color: #333333;
+}
+
+.delete:hover:after,
+.delete:hover:before {
+    border-color: #FFFFFF;
+}
+
+#windowscontainer img:hover {
+    border: 1px solid;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+footer img#chrome {
+    padding: 11px;
+}
+
+footer img#arrow {
+    right: 0;
+    margin-right: 148px;
+    margin-top: 10px;
+    position: absolute;
+    height: 30px;
+    width: 50px;
+    transform: rotate(-90deg);
+    padding: 7px 20px 7px 20px;
+    object-fit: cover;
+}
+
+footer img#ethernet {
+    right: 0;
+    margin-right: 128px;
+    position: absolute;
+    height: 100%;
+    padding: 15px 5px 15px 5px;
+}
+
+footer #time {
+    color: white;
+    right: 0;
+    margin-right: 52px;
+    position: absolute;
+    transition: 0.2s;
     text-align: center;
+    font-size: 13px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    user-select: none;
 }
 
-div#projects {
-    padding-left: 10px;
+div#popups {
+    width: 100%;
+    height: 0;
 }
 
-a {
+div#timechange {
+    user-select: none;
+    position: absolute;
+    height: 0;
+    width: 145px;
+    background-color: rgba(29, 48, 56, 0.9);
+    backdrop-filter: blur(8px);
+    right: 25px;
+    bottom: 50px;
+    color: white;
+    padding-left: 36px;
+    overflow: hidden;
+    border-radius: 2px 2px 0 0;
+    transition: 0.4s;
+}
+
+div#language {
+    user-select: none;
+    position: absolute;
+    height: 0;
+    width: 90px;
+    background-color: rgba(29, 48, 56, 0.9);
+    backdrop-filter: blur(8px);
+    right: 130px;
+    bottom: 50px;
+    color: white;
+    padding-left: 32px;
+    overflow: hidden;
+    border-radius: 2px 2px 0 0;
+    transition: 0.4s;
+}
+
+div#changelog {
+    user-select: none;
+    position: absolute;
+    height: 100% -50px;
+    width: 300px;
+    background-color: rgba(29, 48, 56, 0.9);
+    backdrop-filter: blur(8px);
+    right: -300px;
+    bottom: 50px;
+    color: white;
+    top: 0;
+    padding-left: 20px;
+    overflow: hidden;
+    transition: 0.4s;
+    display: block;
+}
+
+footer a img {
+    height: 50px;
+    padding: 10px;
+}
+
+footer a {
+    cursor: default;
+}
+
+#changelogFooter {
+    width: 100%;
+    text-align: center;
+    bottom: 10px;
+    position: absolute;
+}
+
+#changelogFooter a {
     text-decoration: none;
     color: white;
+    user-select: none;
 }
 
-a:hover {
-    color: green;
-    transition: 0.5s;
+#changelog p {
+    font-size: 22px;
+    margin: 0;
+    margin-bottom: 10px;
+    color: rgb(190, 190, 190);
+}
+
+#changelog h1 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#changelogFooter a:hover {
+    cursor: pointer;
+}
+
+div#timechange div {
+    position: absolute;
+    bottom: 15px;
+}
+
+div#language div {
+    position: absolute;
+    bottom: 15px;
+}
+
+div input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+#checkmark {
+    position: absolute;
+    bottom: 15px;
+    left: 6%;
+    height: 20px;
+    width: 20px;
+    background-color: none;
+    border: 2px solid white;
+}
+
+label:hover input~#checkmark {
+    background-color: rgb(62, 90, 102);
+}
+
+#checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+label input:checked~#checkmark:after {
+    display: block;
+}
+
+label #checkmark:after {
+    left: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+footer img#notification {
+    position: absolute;
+    margin-right: 12px;
+    right: 0;
+    height: 100%;
+    padding: 14px 9px 14px 9px;
+    width: 40px;
+    object-fit: cover;
+}
+
+footer #desktop {
+    width: 5px;
+    height: 100%;
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    right: 0;
+    position: absolute;
+    transition: 0.2s;
+}
+
+footer img:hover,
+#desktop:hover,
+#time:hover {
+    background-color: rgb(255, 255, 255, 0.15);
+}
+
+#bluescreen {
+    color: white;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 121, 216);
+    display: none;
+    z-index: 2;
+}
+
+#bluescreen h1 {
+    font-size: 12vw;
+    margin: 0;
+    position: absolute;
+    top: 0vw;
+    left: 12vw;
+}
+
+#bluescreen p {
+    font-size: 2.7vw;
+    position: absolute;
+    top: 14vw;
+    left: 13vw;
+}
+
+#bluescreen h2 {
+    font-size: 2.7vw;
+    position: absolute;
+    top: 27vw;
+    left: 13vw;
+}
+
+#bluescreen img#qrcode {
+    position: absolute;
+    height: 10vw;
+    top: 35vw;
+    left: 13vw;
+}
+
+#bluescreen span {
+    position: absolute;
+}
+
+#bluescreen span:nth-of-type(1) {
+    top: 35vw;
+    left: 25vw;
+    font-size: 1.3vw;
+}
+
+#bluescreen span:nth-of-type(2) {
+    top: 40vw;
+    left: 25vw;
+    font-size: 1.2vw;
+}
+
+#bluescreen span:nth-of-type(3) {
+    top: 43vw;
+    left: 25vw;
+    font-size: 1.2vw;
+}
+
+#bluescreen div h3 {
+    font-size: 2vw;
+    margin-bottom: 0;
+    margin-top: 1vw;
+}
+
+#bluescreen div img#loading {
+    width: 5vw;
+}
+
+#bluescreen div#after {
+    width: 100%;
+    place-content: center;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    background-color: rgb(0, 121, 216);
+}
+
+.desktop-selection-rectangle {
+    position: absolute;
+    border: 1px solid rgba(10, 116, 255, 0.9);
+    background-color: rgba(30, 30, 255, 0.15);
+    /* Blue with 10% opacity */
+    pointer-events: none;
+    /* Allows clicks to pass through the selection rectangle */
+    z-index: 2;
+    /* Ensures the rectangle appears above other content */
 }
